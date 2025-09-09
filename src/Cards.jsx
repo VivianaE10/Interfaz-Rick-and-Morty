@@ -1,12 +1,10 @@
 import { useEffect, useState } from "react";
 
 const CardS = (props) => {
-  const [episode, setEpisode] = useState([]); // el arreglo me llama la url rickandmorti
+  const [episode, setEpisode] = useState({}); // el arreglo me llama la url rickandmorti
   useEffect(() => {
     getEpisode(); // para que no me funcione el boton
-
-    console.log("este es mi usest");
-  }, []);
+  }, [props.primeraVez]);
 
   const getEpisode = async () => {
     const response = await fetch(props.primeraVez[0]); // useState me llama
